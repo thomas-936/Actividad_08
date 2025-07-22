@@ -1,10 +1,25 @@
 print("Actividad 08")
 opcion = 0
 
-def factorial (n)
+def factorial (n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        resultado = 1
+        for i in range(2, n+1):
+            resultado *= i
+        return  resultado
 
+def suma_naturales(n):
+    if n == 0:
+        return 0
+    else:
+        suma = 0
+        for i in range(n, 0, -1):
+            suma+=i
+        return suma
 
-while (opcion!=6):
+while (opcion!=7):
     print("+++Menu+++")
     print("1. Calcular el factorial de un número")
     print("2. Suma de los primeros N números naturales")
@@ -21,10 +36,18 @@ while (opcion!=6):
         continue
 
     match opcion:
+        case 1:
+            print("**Calcular factorial**")
+            numero = int(input("\nIngrese un número para calcuñar su factorial: "))
+            if numero <= 0:
+                print("El número ingresado no debe ser negativo: ")
+            else:
+                print(f"El factoroal del número {numero} es {factorial(numero)}")
 
-
-
-
-
-
-
+        case 2:
+            print("++Suma de los primero N números naturales++")
+            num = int(input("Ingrese un número natural: "))
+            if num < 0:
+                print("El ingreso debe ser un número natural (positivo)")
+            else:
+                print(f"La suma de los numero naturales hasta {num} es {suma_naturales(num)} ")
