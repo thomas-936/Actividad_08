@@ -19,6 +19,18 @@ def suma_naturales(n):
             suma+=i
         return suma
 
+def fibo (n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    else:
+        a = 0
+        b = 1
+        for _ in range(2, n+2):
+            a, b = b, a+ b
+            return b
+
 while (opcion!=7):
     print("+++Menu+++")
     print("1. Calcular el factorial de un número")
@@ -51,3 +63,11 @@ while (opcion!=7):
                 print("El ingreso debe ser un número natural (positivo)")
             else:
                 print(f"La suma de los numero naturales hasta {num} es {suma_naturales(num)} ")
+
+        case 3:
+            print("***Calular el factorial de un número n***")
+            numero_fibo = int(input("Ingrese un número n: "))
+            if numero_fibo < 0:
+                print("El ingreso debe ser un número positivo: ")
+            else:
+                print(f"El fibonacci de {numero_fibo} es {fibo(numero_fibo)}")
